@@ -51,27 +51,24 @@ BoxLayoutScreen:
         height: "70dp"
         padding: [10, 15, 10, 10]
 
-        GridLayout:
-            cols: 5
-            rows: 1
-            size_hint: 0.5, 1
-            padding: [7, 8, 0, 0]
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 0.4, 0.5
+            padding: [7, 100, 10, 5]
 
             MDIconButton:
                 icon: "larawan/tuldok-pahalang-icon.png"
-                user_font_size: "10dp"
+                user_font_size: "5dp"
                 on_release: root.ipakita_ang_iba_pang_kagamitan()
 
             MDIconButton:
                 icon: "larawan/basurahan-icon.png"
-                user_font_size: "10dp"
+                user_font_size: "5dp"
                 on_release: root.alisin()
 
             MDIconButton:
                 icon: "larawan/paste-icon.png"
-                user_font_size: "10dp"
-                theme_text_color: "Custom"
-                md_bg_color: app.theme_cls.primary_color
+                user_font_size: "5dp"
                 on_release:
                     balita.text = Clipboard.paste()
             

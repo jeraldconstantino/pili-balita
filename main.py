@@ -133,7 +133,6 @@ class Katawan(BoxLayout):
         )
         self.dayalogo_ng_gabay_sa_aplikasyon.open()
 
-    # Link ng google form
     def ipakita_ang_patalastas(self):
         self.dayalogo_ng_gabay_sa_aplikasyon = MDDialog(
             type="custom",
