@@ -50,36 +50,29 @@ BoxLayoutScreen:
         size_hint: 1, None
         height: "70dp"
         padding: [10, 15, 10, 10]
-    
+        spacing: [10, 0]
+
         GridLayout:
             cols: 5
             rows: 1
             size_hint: 0.4, 1
-            padding: [0, 10, 10, 0]
+            padding: [7, 6, 0, 0]
 
-            PindutanNgIbaPangKagamitan:
-                tooltip_text: "Iba pang kagamitan"
-                size_hint: 1, 0.15
+            MDIconButton:
+                icon: "larawan/tuldok-pahalang-icon.png"
+                user_font_size: "12dp"
                 on_release: root.ipakita_ang_iba_pang_kagamitan()
 
-            Label:
-                text: " "
-                size_hint: None, 1
-                width: "3dp"
-
-            PindutanNgAlisin:
-                tooltip_text: "Burahin"
-                size_hint: 1, 0.15
+            MDIconButton:
+                icon: "larawan/basurahan-icon.png"
+                user_font_size: "12dp"
                 on_release: root.alisin()
 
-            Label:
-                text: " "
-                size_hint: None, 1
-                width: "3dp"
-
-            PindutanNgPaste:
-                tooltip_text: "Paste"
-                size_hint: 1, 0.15
+            MDIconButton:
+                icon: "larawan/paste-icon.png"
+                user_font_size: "12dp"
+                theme_text_color: "Custom"
+                md_bg_color: app.theme_cls.primary_color
                 on_release:
                     balita.text = Clipboard.paste()
             
@@ -98,70 +91,6 @@ BoxLayoutScreen:
                     pos: self.pos
                     size: self.size
                     radius: [10,]
-
-<PindutanNgPaste@PindutanNgPasteCanvas+MDTooltip>
-<PindutanNgAlisin@PindutanNgAlisinCanvas+MDTooltip>
-<PindutanNgIbaPangKagamitan@PindutanNgIbaPangKagamitanCanvas+MDTooltip>
-
-<PindutanNgPasteCanvas@Button>:                
-    background_color: 0, 0, 0, 0                
-    md_bg_color: 142/255, 70/255, 26/255, 1
-    
-    canvas.before:
-        Color:
-            rgba: (pangatlong_kulay) if self.state=='normal' else (pangalawang_kulay)
-        RoundedRectangle:
-            pos: self.pos
-            size: self.size
-            radius: [10,]
-
-    canvas:
-        Color:
-            rgba: (1, 1, 1, 1) if self.state=='normal' else (pangatlong_kulay)
-        RoundedRectangle:
-            source: 'larawan/paste-icon.png'
-            pos: (self.center_x-11.5, self.center_y-13)
-            size: (self.width/1.5, self.height/1.6)
-
-<PindutanNgAlisinCanvas@Button>:                
-    background_color: 0, 0, 0, 0                
-    md_bg_color: 142/255, 70/255, 26/255, 1
-    
-    canvas.before:
-        Color:
-            rgba: (pangatlong_kulay) if self.state=='normal' else (pangalawang_kulay)
-        RoundedRectangle:
-            pos: self.pos
-            size: self.size
-            radius: [10,]
-    
-    canvas:
-        Color:
-            rgba: (1, 1, 1, 1) if self.state=='normal' else (pangatlong_kulay)
-        RoundedRectangle:
-            source: 'larawan/basurahan-icon.png'
-            pos: (self.center_x-11.5, self.center_y-13)
-            size: (self.width/1.5, self.height/1.6)
-
-<PindutanNgIbaPangKagamitanCanvas@Button>:
-    background_color: 0, 0, 0, 0                
-    md_bg_color: 142/255, 70/255, 26/255, 1
-    
-    canvas.before:
-        Color:
-            rgba: (pangatlong_kulay) if self.state=='normal' else (pangalawang_kulay)
-        RoundedRectangle:
-            pos: self.pos
-            size: self.size
-            radius: [10,]
-    
-    canvas:
-        Color:
-            rgba: (1, 1, 1, 1) if self.state=='normal' else (pangatlong_kulay)
-        RoundedRectangle:
-            source: 'larawan/pahalang-na-tuldok-icon.png'
-            pos: (self.center_x-11.5, self.center_y-13)
-            size: (self.width/1.5, self.height/1.6)
 
 <Resulta>:
     size_hint_x: 1
