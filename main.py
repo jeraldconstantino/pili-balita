@@ -1,9 +1,3 @@
-from kivy.config import Config
-
-Config.set("graphics", "resizable", "1")
-Config.set("graphics", "width", "450")
-Config.set("graphics", "height", "700")
-
 import urllib
 import certifi as cfi
 from kivymd.app import MDApp
