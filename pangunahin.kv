@@ -1,0 +1,311 @@
+#:import MDTooltip kivymd.uix.tooltip
+#:import CircularProgressBar progressbar
+#:import Clipboard kivy.core.clipboard.Clipboard
+#:import MDSpinner kivymd.uix.spinner
+#:set kulay_ng_textfield 126/255, 84/255, 36/255, .5
+#:set pangunahing_kulay 197/255, 130/255, 51/255, 255/255
+#:set pangalawang_kulay 208/255, 167/255, 106/255, 255/255
+#:set pangatlong_kulay 126/255, 84/255, 36/255, 255/255
+
+BoxLayoutScreen:
+
+<BoxLayoutScreen>:
+    canvas.before:
+        Color:
+            rgba: pangunahing_kulay
+        Rectangle:
+            size: self.size 
+            pos: self.pos
+
+    orientation: "vertical"
+    Ulo:
+    Katawan:
+      
+<Ulo@BoxLayout>:
+    size_hint: 1, None
+    height: "50dp"
+    Label:
+        text: "INSERT PILI-BALITA-ICON"
+
+<Katawan@BoxLayout>:
+    orientation: "vertical"
+    BoxLayout:
+        padding: [10, 0, 10, 10]
+        MDTextField:
+            id: balita
+            mode: "fill"
+            multiline: True
+            hint_text: "Ilagay ang balita dito o pindutin ang Paste icon"
+            current_hint_text_color: [0, 0, 0]
+            color_mode: 'custom'
+            fill_color: kulay_ng_textfield
+            line_color_focus: pangatlong_kulay
+            pos_hint: {'center_x': 0.57, 'center_y': 0.48}
+            size_hint: 1, 1         
+            font_size: "20dp"
+            text_color: 0, 0, 0, 1     
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 1, None
+        height: "70dp"
+        padding: [10, 10, 10, 10]
+    
+        GridLayout:
+            cols: 5
+            rows: 1
+            size_hint: 0.4, 1
+            padding: [0, 10, 10, 0]
+
+            PindutanNgIbaPangKagamitan:
+                tooltip_text: "Iba pang kagamitan"
+                size_hint: 1, 0.15
+                on_release: root.ipakita_ang_iba_pang_kagamitan()
+
+            Label:
+                text: " "
+                size_hint: None, 1
+                width: "3dp"
+
+            PindutanNgAlisin:
+                tooltip_text: "Burahin"
+                size_hint: 1, 0.15
+                on_release: root.alisin()
+
+            Label:
+                text: " "
+                size_hint: None, 1
+                width: "3dp"
+
+            PindutanNgPaste:
+                tooltip_text: "Paste"
+                size_hint: 1, 0.15
+                on_release:
+                    balita.text = Clipboard.paste()
+
+        Button:
+            background_color: 0, 0, 0, 0
+            text: "TUKLASIN!"
+            font_name: "makinilya/seguibl.ttf"
+            font_size: "20dp"
+            md_bg_color: 142/255, 70/255, 26/255, 1
+            on_release: root.tuklasin() 
+
+            canvas.before:
+                Color:
+                    rgba: (pangatlong_kulay) if self.state=='normal' else (pangalawang_kulay)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [10,]
+
+<PindutanNgPaste@PindutanNgPasteCanvas+MDTooltip>
+<PindutanNgAlisin@PindutanNgAlisinCanvas+MDTooltip>
+<PindutanNgIbaPangKagamitan@PindutanNgIbaPangKagamitanCanvas+MDTooltip>
+
+<PindutanNgPasteCanvas@Button>:                
+    background_color: 0, 0, 0, 0                
+    md_bg_color: 142/255, 70/255, 26/255, 1
+    
+    canvas.before:
+        Color:
+            rgba: (pangatlong_kulay) if self.state=='normal' else (pangalawang_kulay)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10,]
+
+    canvas:
+        Color:
+            rgba: (1, 1, 1, 1) if self.state=='normal' else (pangatlong_kulay)
+        RoundedRectangle:
+            source: 'larawan/paste-icon.png'
+            pos: (self.center_x-11.5, self.center_y-13)
+            size: (self.width/1.5, self.height/1.6)
+
+<PindutanNgAlisinCanvas@Button>:                
+    background_color: 0, 0, 0, 0                
+    md_bg_color: 142/255, 70/255, 26/255, 1
+    
+    canvas.before:
+        Color:
+            rgba: (pangatlong_kulay) if self.state=='normal' else (pangalawang_kulay)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10,]
+    
+    canvas:
+        Color:
+            rgba: (1, 1, 1, 1) if self.state=='normal' else (pangatlong_kulay)
+        RoundedRectangle:
+            source: 'larawan/basurahan-icon.png'
+            pos: (self.center_x-11.5, self.center_y-13)
+            size: (self.width/1.5, self.height/1.6)
+
+<PindutanNgIbaPangKagamitanCanvas@Button>:
+    background_color: 0, 0, 0, 0                
+    md_bg_color: 142/255, 70/255, 26/255, 1
+    
+    canvas.before:
+        Color:
+            rgba: (pangatlong_kulay) if self.state=='normal' else (pangalawang_kulay)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10,]
+    
+    canvas:
+        Color:
+            rgba: (1, 1, 1, 1) if self.state=='normal' else (pangatlong_kulay)
+        RoundedRectangle:
+            source: 'larawan/pahalang-na-tuldok-icon.png'
+            pos: (self.center_x-11.5, self.center_y-13)
+            size: (self.width/1.5, self.height/1.6)
+
+<Resulta>:
+    size_hint_x: 1
+    size_hint_y: None
+    height: "160dp"
+
+    MDSpinner:
+        id: paikot 
+        size_hint: None, None
+        size: dp(50), dp(50)
+        pos_hint: {'center_x': .5, 'center_y': .65}
+        active: True
+
+    CircularProgressBar:
+        id: resulta_progressbar
+        pos_hint: {'center_x': .85}
+        pos: 153, 320
+        value: 0
+        
+    MDIconButton:
+        id: prediksyon_unang_icon
+        icon: ""
+        user_font_size: '30sp'
+        pos_hint: {'center_x': 0.1, 'center_y': 0.2}
+    
+    MDIconButton:
+        id: prediksyon_pangalawang_icon
+        icon: ""
+        user_font_size: '30sp'
+        pos_hint: {'center_x': 0.9, 'center_y': 0.2}
+
+    MDLabel:
+        id: resulta_porsyento
+        text: ""
+        font_name: 'makinilya//seguibl.ttf'
+        font_size: "40dp"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.68}
+        halign: 'center'
+
+    MDLabel:
+        id: resulta
+        text: ""
+        font_name: 'makinilya//seguibl.ttf'
+        font_size: "18dp"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        halign: 'center'
+
+<KabuuangResulta>:
+    size_hint_x: 1
+    size_hint_y: None
+    height: "120dp"
+
+    GridLayout:
+        cols: 3
+        rows: 1
+        size_hint: 1, 1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        
+        BoxLayout:
+            size_hint: 1, 1
+            orientation: "vertical"
+            MDLabel:
+                text: "ALGORITMO"
+                font_style: 'H6'
+                pos_hint: {'center_x': 0.4, 'y': 0.5}
+                valign: 'top'
+                halign: 'center'
+
+            MDLabel:
+                text: " LR Prediksyon:"
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.60, 'center_y': 0.75}
+                valign: 'center'
+
+            MDLabel:
+                text: " DT Prediksyon:"
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.60, 'center_y': 0.55}
+                valign: 'center'
+            
+            MDLabel:
+                text: " RFC Prediksyon:"
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.60, 'center_y': 0.35}
+                valign: 'center'
+
+        BoxLayout:
+            size_hint: 0.3, 1
+            orientation: "vertical"
+            MDLabel:
+                text: "(%)"
+                font_style: 'H6'
+                pos_hint: {'center_x': 0.5, 'y': 0.5}
+                valign: 'top'
+                halign: 'center'
+
+            MDLabel:
+                id: lr_porsyento
+                text: ""
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.85, 'center_y': 0.35}
+                valign: 'center'
+
+            MDLabel:
+                id: dt_porsyento
+                text: ""
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.85, 'center_y': 0.35}
+                valign: 'center'
+            
+            MDLabel:
+                id: rfc_porsyento
+                text: ""
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.85, 'center_y': 0.35}
+                valign: 'center'
+        
+        BoxLayout:
+            size_hint: 0.7, 1
+            orientation: "vertical"
+            MDLabel:
+                text: "HUSGA"
+                font_style: 'H6'
+                pos_hint: {'center_x': 0.47, 'y': 0.5}
+                valign: 'top'
+                halign: 'center'
+
+            MDLabel:
+                id: lr_kategorya
+                text: ""
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.75, 'center_y': 0.7}
+                valign: 'center'
+
+            MDLabel:
+                id: dt_kategorya
+                text: ""
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.75, 'center_y': 0.7}
+                valign: 'center'
+
+            MDLabel:
+                id: rfc_kategorya
+                text: ""
+                font_style: 'Body1'
+                pos_hint: {'center_x': 0.75, 'center_y': 0.7}
+                valign: 'center'
