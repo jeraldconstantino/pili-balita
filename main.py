@@ -41,7 +41,7 @@ class Katawan(BoxLayout):
 
     def ipakita_ang_resulta(self):
         self.kabuuang_resulta_pindutan = MDRaisedButton(
-                    text="TINGNAN ANG KABUUANG RESULTA",
+                    text="KABUUANG RESULTA",
                     disabled=True,
                     md_bg_color=(197/255, 130/255, 51/255, 0),
                     on_press=self.ipakita_ang_kabuuang_resulta,
