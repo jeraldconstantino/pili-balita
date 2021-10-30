@@ -1,5 +1,5 @@
-import urllib
 import certifi as cfi
+import urllib, webbrowser
 from kivymd.app import MDApp
 from kivymd.toast import toast
 from kivy.core.window import Window
@@ -7,8 +7,9 @@ from kivymd.uix.dialog import MDDialog
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.network.urlrequest import UrlRequest
-from kivymd.uix.bottomsheet import MDGridBottomSheet
+from kivymd.uix.bottomsheet import MDGridBottomSheet, MDCustomBottomSheet
 from kivymd.uix.button import MDFlatButton, MDRaisedButton
+from kivy.factory import Factory
 
 
 class KabuuangResulta(FloatLayout):
@@ -138,21 +139,22 @@ class Katawan(BoxLayout):
             type="custom",
             title="PATALASTAS",
             text="    Isang magandang araw! Maaari ba kaming makahingi ng kaunting oras para ikaw ay aming "
-            + "makapanayam? Maaari ninyong pindutin ang lunsaran sa baba para idirekta sa mismong talatanungan. "
-            + "Kami ay nangangako na ang mga datos na makakalap sa pag-aaral na ito ay mamamagitan lamang sa mga nagsagot, "
-            + "at ng mga mananaliksik at sa mga may kauganayan sa pag-aaral na ito. Maraming salamat! "
+            + "makapanayam? Maaari ninyong pindutin ang lunsaran sa baba para idirekta kayo sa mismong talatanungan. "
+            + "Makakaasa po kayong ang mga datos na inyong ibibigay ay titipunin namin ng may lubos na kumpidensiyalidad "
+            + "alinsunod sa Data Privacy Act of 2012, at ito ay gagamitin lamang sa mga pang-akademikong layunin. Maraming salamat! "
             + " - Mga mananaliksik mula sa Departamento ng Inhinyerong Pang-Kompyuter, COE3104",
             radius=[10],
             buttons=[
-                MDFlatButton(
-                    text="LINK",
-                    theme_text_color="Custom",
-                    text_color=(126 / 255, 84 / 255, 36 / 255, 255 / 255),
-                    # on_press=self.isara_ang_dayalogo_ng_mali,
-                ),
-            ],
+                MDRaisedButton(
+                    text="SURBEY-PANAYAM LUNSARAN",
+                    on_press=self.buksan_ang_surbey_panayam
+            )],
         )
         self.dayalogo_ng_gabay_sa_aplikasyon.open()
+    
+    def buksan_ang_surbey_panayam(self, obj):
+        self.dayalogo_ng_gabay_sa_aplikasyon.dismiss()
+        webbrowser.open("https://forms.gle/FYA2wgJQ2n2hFEW99")
 
     def isara_ang_dayalogo_ng_resulta(self, obj):
         self.dayalogo_ng_resulta.dismiss()
@@ -181,6 +183,7 @@ class Katawan(BoxLayout):
         print("searched!")
         self.resulta = result
         self.dayalogo_ng_resulta.content_cls.ids.paikot.active = False
+        self.dayalogo_ng_resulta.content_cls.ids.kawastuhan.text = "KAWASTUHAN"
         self.kabuuang_resulta_pindutan.disabled = False
         self.kabuuang_resulta_pindutan.md_bg_color = (126/255, 84/255, 36/255, 255/255)
         self.dayalogo_ng_resulta.content_cls.ids.resulta_progressbar.value = result["Average "]
