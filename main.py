@@ -7,9 +7,8 @@ from kivymd.uix.dialog import MDDialog
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.network.urlrequest import UrlRequest
-from kivymd.uix.bottomsheet import MDGridBottomSheet, MDCustomBottomSheet
+from kivymd.uix.bottomsheet import MDGridBottomSheet
 from kivymd.uix.button import MDFlatButton, MDRaisedButton
-from kivy.factory import Factory
 
 
 class KabuuangResulta(FloatLayout):
@@ -116,7 +115,7 @@ class Katawan(BoxLayout):
         self.dayalogo_ng_tungkol_sa_aplikasyon = MDDialog(
             title="PILI-BALITA: DETEKTOR NG MALING BALITA",
             text="    Ang Pili-Balita ay isang machine learning application software na maaaring makatulong "
-            + "sa pagtukoy kung ang isang balita ba ay naglalaman ng maling impormasyon o hindi. \n\nVersion 1.0.0",
+            + "sa pagtukoy kung ang isang balita ba ay naglalaman ng maling impormasyon o hindi. \n\nVersion 1.0.0 beta",
             radius=[10],
         )
         self.dayalogo_ng_tungkol_sa_aplikasyon.open()
@@ -180,7 +179,6 @@ class Katawan(BoxLayout):
         )
     
     def iulat_ang_resulta(self, urlrequest, result):
-        print("searched!")
         self.resulta = result
         self.dayalogo_ng_resulta.content_cls.ids.paikot.active = False
         self.dayalogo_ng_resulta.content_cls.ids.kawastuhan.text = "KAWASTUHAN"
@@ -191,7 +189,7 @@ class Katawan(BoxLayout):
 
         if result["Husga"] == "TUNAY":
             self.dayalogo_ng_resulta.content_cls.ids.resulta.text = "TUNAY ANG NILALAMAN"
-            self.dayalogo_ng_resulta.content_cls.ids.resulta.text_color = (0, 179/255, 44/255, 1)
+            self.dayalogo_ng_resulta.content_cls.ids.resulta.text_color =  (126/255, 84/255, 36/255, 255/255)
             self.dayalogo_ng_resulta.content_cls.ids.prediksyon_unang_icon.icon = ""
             self.dayalogo_ng_resulta.content_cls.ids.prediksyon_pangalawang_icon.icon = ""
         else:
