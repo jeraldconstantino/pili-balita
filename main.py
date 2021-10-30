@@ -167,9 +167,7 @@ class Katawan(BoxLayout):
         self.ids.balita.text = ""
 
     def iproseso_ang_datos(self):
-        print("===========")
         balita = urllib.parse.quote(self.ids.balita.text, safe='')
-        print(balita)
         URLRequest = f"https://pilibalita-api.herokuapp.com/hula?balita={balita}"
         UrlRequest(
             url=URLRequest,
@@ -190,16 +188,18 @@ class Katawan(BoxLayout):
 
         if result["Husga"] == "TUNAY":
             self.dayalogo_ng_resulta.content_cls.ids.resulta.text = "TUNAY ANG NILALAMAN"
-            self.dayalogo_ng_resulta.content_cls.ids.prediksyon_unang_icon.icon = "check-circle"
-            self.dayalogo_ng_resulta.content_cls.ids.prediksyon_pangalawang_icon.icon = "check-circle"
+            self.dayalogo_ng_resulta.content_cls.ids.resulta.text_color = (0, 179/255, 44/255, 1)
+            self.dayalogo_ng_resulta.content_cls.ids.prediksyon_unang_icon.icon = ""
+            self.dayalogo_ng_resulta.content_cls.ids.prediksyon_pangalawang_icon.icon = ""
         else:
             self.dayalogo_ng_resulta.content_cls.ids.resulta.text = "PEKENG BALITA"
+            self.dayalogo_ng_resulta.content_cls.ids.resulta.text_color = (1, 0, 0, 1)
             self.dayalogo_ng_resulta.content_cls.ids.prediksyon_unang_icon.icon = "alert-octagon"
             self.dayalogo_ng_resulta.content_cls.ids.prediksyon_pangalawang_icon.icon = "alert-octagon"
 
     def iulat_ang_mali(self, urlrequest, result):
         self.dayalogo_ng_resulta.dismiss()
-        toast("Nabigong kuhanin ang resulta. Siguraduhing konektado ka sa Internet o may sapat na alokasyon ng datos para dito")
+        toast("Nabigong kuhanin ang resulta. Siguraduhing konektado ka sa Internet \no may sapat na alokasyon ng datos para dito")
 
     def iproseso_ang_kabuuang_resulta(self):
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.lr_porsyento.text = str(self.resulta["LR Porsyento"])

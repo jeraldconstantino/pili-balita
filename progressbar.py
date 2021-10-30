@@ -15,14 +15,14 @@ from math import ceil
 _ACCEPTED_BAR_CAPS = {"round", "none", "square"}
 
 # Declare the defaults for the modifiable values
-_DEFAULT_THICKNESS = 4
+_DEFAULT_THICKNESS = 5
 _DEFAULT_CAP_STYLE = "round"
 _DEFAULT_PRECISION = 10
 _DEFAULT_PROGRESS_COLOUR = (127/255, 96/255, 7/255, 255/255)
 _DEFAULT_BACKGROUND_COLOUR = (0.26, 0.26, 0.26, 0.5)
 _DEFAULT_MAX_PROGRESS = 100
 _DEFAULT_MIN_PROGRESS = 0
-_DEFAULT_WIDGET_SIZE = 110
+_DEFAULT_WIDGET_SIZE = 280
 _DEFAULT_TEXT_LABEL = Label(text="{}%", font_size=35, color=(0,0,0,0))
 
 # Declare the defaults for the normalisation function, these are used in the textual representation (multiplied by 100)
