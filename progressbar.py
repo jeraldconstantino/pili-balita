@@ -15,7 +15,7 @@ from math import ceil
 _ACCEPTED_BAR_CAPS = {"round", "none", "square"}
 
 # Declare the defaults for the modifiable values
-_DEFAULT_THICKNESS = 9
+_DEFAULT_THICKNESS = 8
 _DEFAULT_CAP_STYLE = "round"
 _DEFAULT_PRECISION = 10
 _DEFAULT_PROGRESS_COLOUR = (127/255, 96/255, 7/255, 255/255)
