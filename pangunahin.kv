@@ -110,26 +110,10 @@ BoxLayoutScreen:
 
     CircularProgressBar:
         id: resulta_progressbar
-        pos_hint: {'center_x': .50}
-        pos: 110, 660
+        pos_hint: {'center_x': .65}
+        pos: 110, 650
         value: 0
-        
-    MDIconButton:
-        id: prediksyon_unang_icon
-        icon: ""
-        theme_text_color: "Custom"
-        text_color: (1, 0, 0, 1)
-        user_font_size: '30sp'
-        pos_hint: {'center_x': 0.1, 'center_y': 0.3}
     
-    MDIconButton:
-        id: prediksyon_pangalawang_icon
-        icon: ""
-        theme_text_color: "Custom"
-        text_color: (1, 0, 0, 1)
-        user_font_size: '30sp'
-        pos_hint: {'center_x': 0.9, 'center_y': 0.3}
-
     MDLabel:
         id: kawastuhan
         text: ""
@@ -146,6 +130,23 @@ BoxLayoutScreen:
         pos_hint: {'center_x': 0.5, 'center_y': 0.66}
         halign: 'center'
 
+    MDIconButton:
+        id: prediksyon_unang_icon
+        icon: ""
+        theme_text_color: "Custom"
+        text_color: (1, 0, 0, 1)
+        user_font_size: '30sp'
+        pos_hint: {'center_x': 0.1, 'center_y': 0.25}
+    
+    MDIconButton:
+        id: prediksyon_pangalawang_icon
+        icon: ""
+        theme_text_color: "Custom"
+        text_color: (1, 0, 0, 1)
+        user_font_size: '30sp'
+        pos_hint: {'center_x': 0.9, 'center_y': 0.25}
+
+
     MDLabel:
         id: resulta
         text: ""
@@ -153,7 +154,7 @@ BoxLayoutScreen:
         text_color: 0, 0, 0, 1
         font_name: 'makinilya//seguibl.ttf'
         font_size: "18dp"
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.25}
         halign: 'center'
 
 <KabuuangResulta>:
