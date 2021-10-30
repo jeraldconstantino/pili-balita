@@ -167,7 +167,8 @@ class Katawan(BoxLayout):
         self.ids.balita.text = ""
 
     def iproseso_ang_datos(self):
-        balita = urllib.parse.quote(self.ids.balita.text, safe='')
+        # balita = urllib.parse.quote(self.ids.balita.text, safe='')
+        balita = self.ids.balita.text
         URLRequest = f"https://pilibalita-api.herokuapp.com/hula?balita={balita}"
         UrlRequest(
             url=URLRequest,
