@@ -1,0 +1,3 @@
+def anunsyo():
+    nilalaman = "    Isang magandang araw! Maaari ba kaming makahingi ng kaunting oras para ikaw ay aming makapanayam? Maaari ninyong pindutin ang lunsaran sa baba para idirekta kayo sa mismong talatanungan. Makakaasa po kayong ang mga datos na inyong ibibigay ay titipunin namin ng may lubos na kumpidensiyalidad alinsunod sa Data Privacy Act of 2012, at ito ay gagamitin lamang sa mga pang-akademikong layunin. Maraming salamat! \n\n     — Mga mananaliksik mula sa Departamento ng Inhinyerong Pang-Kompyuter, CpE-3104"
+    return nilalaman

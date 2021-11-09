@@ -2,14 +2,15 @@ import certifi as cfi
 import urllib, webbrowser
 from kivymd.app import MDApp
 from kivymd.toast import toast
+from patalastas import anunsyo
 from kivy.core.window import Window
 from kivymd.uix.dialog import MDDialog
+from tungkolSaAplikasyon import tungkol
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.network.urlrequest import UrlRequest
 from kivymd.uix.bottomsheet import MDGridBottomSheet
 from kivymd.uix.button import MDFlatButton, MDRaisedButton
-
 
 class KabuuangResulta(FloatLayout):
     pass
@@ -114,8 +115,7 @@ class Katawan(BoxLayout):
     def ipakita_ang_tungkol_sa_aplikasyon(self):
         self.dayalogo_ng_tungkol_sa_aplikasyon = MDDialog(
             title="PILI-BALITA: DETEKTOR NG MALING BALITA",
-            text="    Ang Pili-Balita ay isang machine learning application software na maaaring makatulong "
-            + "sa pagtukoy kung ang isang balita ba ay naglalaman ng maling impormasyon o hindi. \n\nVersion 1.0.0 beta",
+            text= tungkol(),
             radius=[10],
         )
         self.dayalogo_ng_tungkol_sa_aplikasyon.open()
@@ -137,11 +137,7 @@ class Katawan(BoxLayout):
         self.dayalogo_ng_gabay_sa_aplikasyon = MDDialog(
             type="custom",
             title="PATALASTAS",
-            text="    Isang magandang araw! Maaari ba kaming makahingi ng kaunting oras para ikaw ay aming "
-            + "makapanayam? Maaari ninyong pindutin ang lunsaran sa baba para idirekta kayo sa mismong talatanungan. "
-            + "Makakaasa po kayong ang mga datos na inyong ibibigay ay titipunin namin ng may lubos na kumpidensiyalidad "
-            + "alinsunod sa Data Privacy Act of 2012, at ito ay gagamitin lamang sa mga pang-akademikong layunin. Maraming salamat! "
-            + " - Mga mananaliksik mula sa Departamento ng Inhinyerong Pang-Kompyuter, COE3104",
+            text=anunsyo(),
             radius=[10],
             buttons=[
                 MDRaisedButton(
