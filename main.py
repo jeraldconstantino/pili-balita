@@ -214,6 +214,7 @@ class Katawan(BoxLayout):
 class Pangunahin(MDApp):
     def build(self):
         self.title = "Pili-Balita"
+        self.icon = "larawan/pili-balita-icon.png"
         self.theme_cls.primary_palette = "Brown"
 
 
