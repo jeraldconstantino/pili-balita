@@ -12,6 +12,7 @@ from kivy.network.urlrequest import UrlRequest
 from kivymd.uix.bottomsheet import MDGridBottomSheet
 from kivymd.uix.button import MDFlatButton, MDRaisedButton
 
+
 class KabuuangResulta(FloatLayout):
     pass
 
@@ -51,7 +52,7 @@ class Katawan(BoxLayout):
             buttons=[
                 self.kabuuang_resulta_pindutan,
                 MDFlatButton(
-                    text="KANSELAHIN",
+                    text="ISARA",
                     theme_text_color="Custom",
                     text_color=(126 / 255, 84 / 255, 36 / 255, 255 / 255),
                     on_press=self.isara_ang_dayalogo_ng_resulta,
@@ -69,7 +70,7 @@ class Katawan(BoxLayout):
             content_cls=KabuuangResulta(),
             buttons=[
                 MDFlatButton(
-                    text="KANSELAHIN",
+                    text="ISARA",
                     theme_text_color="Custom",
                     text_color=(126 / 255, 84 / 255, 36 / 255, 255 / 255),
                     on_press=self.isara_ang_dayalogo_ng_kabuuang_resulta,
@@ -109,6 +110,7 @@ class Katawan(BoxLayout):
 
         elif args[0] == "PATALASTAS!":
             self.ipakita_ang_patalastas()
+
         else:
             Window.close()
 
@@ -170,6 +172,7 @@ class Katawan(BoxLayout):
             url=URLRequest,
             on_success=self.iulat_ang_resulta,
             on_failure=self.iulat_ang_mali,
+            on_error=self.iulat_ang_error,
             ca_file=cfi.where(),
             verify=True,
         )
@@ -180,7 +183,6 @@ class Katawan(BoxLayout):
         self.dayalogo_ng_resulta.content_cls.ids.kawastuhan.text = "KAWASTUHAN"
         self.kabuuang_resulta_pindutan.disabled = False
         self.kabuuang_resulta_pindutan.md_bg_color = (126/255, 84/255, 36/255, 255/255)
-        self.dayalogo_ng_resulta.content_cls.ids.resulta_progressbar.value = result["Average "]
         self.dayalogo_ng_resulta.content_cls.ids.resulta_porsyento.text = str(result["Average "]) + "%"
 
         if result["Husga"] == "TUNAY":
@@ -198,6 +200,10 @@ class Katawan(BoxLayout):
         self.dayalogo_ng_resulta.dismiss()
         toast("Nabigong kuhanin ang resulta. Siguraduhing konektado ka sa Internet \no may sapat na alokasyon ng datos para dito")
 
+    def iulat_ang_error(self, urlrequest, result):
+        self.dayalogo_ng_resulta.dismiss()
+        toast("Nabigong kuhanin ang resulta. Ulitin muli o i-refresh ang aplikasyon.")
+
     def iproseso_ang_kabuuang_resulta(self):
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.lr_porsyento.text = str(self.resulta["LR Porsyento"])
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.lr_kategorya.text = self.resulta["LR Prediksyon"]
@@ -206,12 +212,10 @@ class Katawan(BoxLayout):
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.rfc_porsyento.text = str(self.resulta["RFC Porsyento"])
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.rfc_kategorya.text = self.resulta["RFC Prediksyon"]
 
-
 class Pangunahin(MDApp):
     def build(self):
         self.title = "Pili-Balita"
         self.icon = "larawan/pili-balita-icon.png"
         self.theme_cls.primary_palette = "Brown"
-
 
 Pangunahin().run()
