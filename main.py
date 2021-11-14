@@ -5,10 +5,8 @@ from kivymd.toast import toast
 from patalastas import anunsyo
 from kivy.core.window import Window
 from kivymd.uix.dialog import MDDialog
-from tungkolSaAplikasyon import tungkol
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
-from deskripsyonAlgoritmo import deskripsyon
 from kivy.network.urlrequest import UrlRequest
 from kivymd.uix.bottomsheet import MDGridBottomSheet
 from kivymd.uix.button import MDFlatButton, MDRaisedButton
@@ -27,6 +25,14 @@ class BoxLayoutScreen(BoxLayout):
 
 
 class DeskripsyonAlgoritmo(BoxLayout):
+    pass
+
+
+class TungkolSaAplikasyon(BoxLayout):
+    pass
+
+
+class GabaySaAplikasyon(BoxLayout):
     pass
 
 
@@ -134,8 +140,9 @@ class Katawan(BoxLayout):
 
     def ipakita_ang_tungkol_sa_aplikasyon(self):
         self.dayalogo_ng_tungkol_sa_aplikasyon = MDDialog(
+            type="custom",
             title="PILI-BALITA: DETEKTOR NG MALING BALITA",
-            text=tungkol(),
+            content_cls=TungkolSaAplikasyon(),
             radius=[10],
         )
         self.dayalogo_ng_tungkol_sa_aplikasyon.open()
@@ -144,11 +151,7 @@ class Katawan(BoxLayout):
         self.dayalogo_ng_gabay_sa_aplikasyon = MDDialog(
             type="custom",
             title="GABAY SA PAGGAMIT NG PILI-BALITA",
-            text="1. Humanap ng mga balitang kumakalat sa sosyal midya. Kapag nagdadalawang-isip ka sa balitang iyong nabasa. Maaari mong kopyahin ang kabuuang balita.\n"
-            + "\n2. Matapos kopyahin ang balita, ilagay ito sa TEXT FIELD. Maaari mo ring pindutin ang PINDUTAN NG PASTE para mailagay ng awtomatiko ang iyong kinopyang balita.\n"
-            + "\n3. Pindutin ang  PINDUTAN NG TUKLASIN! para maproseso ng aplikasyon ang iyong nailagay na balita.\n"
-            + "\n4. Pagkatapos iproseso ang datos, ipapakita ng aplikasyon ang porsyento ng kawastuhan ng balita, pati na rin ang husga nito ukol dito.\n"
-            + "\n5. Maaari mo ring pindutin ang PINDUTAN NG KABUUANG RESULTA upang makita ang kabuuang detalye ng resulta.\n",
+            content_cls=GabaySaAplikasyon(),
             radius=[10],
         )
         self.dayalogo_ng_gabay_sa_aplikasyon.open()
@@ -229,6 +232,7 @@ class Katawan(BoxLayout):
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.dt_kategorya.text = self.resulta["DT Prediksyon"]
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.rfc_porsyento.text = str(self.resulta["RFC Porsyento"])
         self.dayalogo_ng_kabuuang_resulta.content_cls.ids.rfc_kategorya.text = self.resulta["RFC Prediksyon"]
+
 
 class Pangunahin(MDApp):
     def build(self):
