@@ -263,77 +263,80 @@ BoxLayoutScreen:
                 pos_hint: {'center_x': 0.8, 'center_y': 0.7}
                 valign: 'center'
 
+<TungkolSaAplikasyon>:
+    orientation: "vertical"
+    size_hint_x: 1
+    size_hint_y: None
+    height: "100dp"
+    MDLabel:
+        text: "Ang Pili-Balita ay isang machine learning application software na maaaring makatulong sa pagtukoy kung ang isang balita ba ay naglalaman ng maling impormasyon o hindi. \n\nBersyon 1.0.0 BETA"
+        font_size: "12dp"
+        size_hint: 1, 1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        halign: 'justify'
+        valign: 'center'
+
 <DeskripsyonAlgoritmo>:
     orientation: "vertical"
     size_hint_x: 1
     size_hint_y: None
     height: "400dp"
     MDLabel:
-        text: "LOGISTIC REGRESSION - Ito ay isang algoritmo ng pag-uuri o pagkakategorya, na ginagamit kung saan ang baryabol ng tugon ay kategorya. Ang ideya ng Logistic Regression ay ang paghahanap ng kaugnayan sa pagitan ng mga feature at probabilidad ng partikular na resulta. Hal. Ginagamit ang algoritmo na ito kung kailangan nating hulaan kung ang isang balita ba ay naglalaman ng mga maling impormasyon o hindi."
+        text: "LOGISTIC REGRESSION - Ito ay isang algoritmo ng pag-uuri o pagkakategorya, na ginagamit kung saan ang baryabol ng tugon ay kategorya. Ang ideya ng Logistic Regression ay ang paghahanap ng kaugnayan sa pagitan ng mga feature at probabilidad ng partikular na resulta. Hal. Ginagamit ang algoritmo na ito kung kailangan nating hulaan kung ang isang balita ba ay naglalaman ng mga maling impormasyon o hindi.\n"
         font_size: "10dp"
-        size_hint: 1, 0.6
+        size_hint: 1, 0.3
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         halign: 'justify'
 
     MDLabel:
         text: "DECISION TREE - Ito ay isang uri ng supervised machine learning na ginagamit upang ikategorya o gumawa ng mga hula batay sa mga kasagutan mula sa umiiral ng katanungan. Ang nabanggit na algoritmo ay isang anyo ng pinangangasiwaang pag-aaral, ibig sabihin, ang modelo ay sinanay at nasubok sa isang koleksyon ng mga datos na naglalaman ng nais na pagkakategorya o pag-uuri.\n"
         font_size: "10dp"
+        size_hint: 1, 0.5
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         halign: 'justify'
     
     MDLabel:
         text: "RANDOM FOREST CLASSIFIERS - Ito ay binubuo ng maraming algoritmo ng Decision Tree at pinagsasama ang mga ito upang makakuha ng mas tumpak at matatag na hula. Dagdag pa rito, ang Random Forest Classifiers ay isa sa madaling gamiting algoritmo sa machine learning na nagpre-predikta (kahit na walang hyper-parameter tuning) ng isang mahusay na resulta sa halos lahat ng oras. Isa rin ito sa mga pinakaginagamit na algoritmo, dahil sa pagiging simple at pagkakatangi nito sa iba pang algoritmo. Ang kalamangan pa nito sa iba ay maaari itong gamitin para sa parehong mga gawain sa pagkakategorya at regression.\n\n"
         font_size: "10dp"
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        size_hint: 1, 0.6
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7}
         halign: 'justify'
-
-<TungkolSaAplikasyon>:
-    orientation: "vertical"
-    size_hint_x: 1
-    size_hint_y: None
-    height: "150dp"
-    MDLabel:
-        text: "   Ang Pili-Balita ay isang machine learning application software na maaaring makatulong sa pagtukoy kung ang isang balita ba ay naglalaman ng maling impormasyon o hindi. \n\nBersyon 1.0.0 BETA"
-        font_size: "12dp"
-        size_hint: 1, 1
-        pos_hint: {'center_x': 0.5, 'center_y': 0.8}
-        halign: 'justify'
-    
+        
 <GabaySaAplikasyon>:
     orientation: "vertical"
     size_hint_x: 1
     size_hint_y: None
     height: "400dp"
     MDLabel:
-        text: "1. Humanap ng mga balitang kumakalat sa sosyal midya. Kapag nagdadalawang-isip ka sa balitang iyong nabasa. Maaari mong kopyahin ang kabuuang balita.\n"
+        text: "1.  Humanap ng mga balitang kumakalat sa sosyal midya. Kapag nagdadalawang-isip ka sa balitang iyong nabasa. Maaari mong kopyahin ang kabuuang balita.\n"
         font_size: "12dp"
         size_hint: 1, 0.6
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         halign: 'justify'
 
     MDLabel:
-        text: "2. Matapos kopyahin ang balita, ilagay ito sa TEXT FIELD. Maaari mo ring pindutin ang PINDUTAN NG PASTE para mailagay ng awtomatiko ang iyong kinopyang balita.\n"
+        text: "2.  Matapos kopyahin ang balita, ilagay ito sa TEXTFIELD. Maaari mo ring pindutin ang PINDUTAN NG PASTE para mailagay ng awtomatiko ang iyong kinopyang balita.\n"
         font_size: "12dp"
         size_hint: 1, 0.6
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         halign: 'justify'
 
     MDLabel:
-        text: "3. Pindutin ang  PINDUTAN NG TUKLASIN! para maproseso ng aplikasyon ang iyong nailagay na balita.\n"
+        text: "3.  Pindutin ang PINDUTAN NG TUKLASIN! para maproseso ng aplikasyon ang iyong nailagay na balita.\n"
         font_size: "12dp"
         size_hint: 1, 0.6
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         halign: 'justify'
 
     MDLabel:
-        text: "4. Pagkatapos iproseso ang datos, ipapakita ng aplikasyon ang porsyento ng kawastuhan ng balita, pati na rin ang husga nito ukol dito.\n"
+        text: "4.  Pagkatapos iproseso ang datos, ipapakita ng aplikasyon ang porsyento ng kawastuhan ng balita, pati na rin ang husga nito ukol dito.\n"
         font_size: "12dp"
         size_hint: 1, 0.6
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         halign: 'justify'
     
     MDLabel:
-        text: "5. Maaari mo ring pindutin ang PINDUTAN NG KABUUANG RESULTA upang makita ang kabuuang detalye ng resulta.\n"
+        text: "5.  Maaari mo ring pindutin ang PINDUTAN NG KABUUANG RESULTA upang makita ang kabuuang detalye ng resulta.\n"
         font_size: "12dp"
         size_hint: 1, 0.6
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
