@@ -9,7 +9,7 @@
 - Display the accuracy output of the three different algorithms used in the App.
 
 ## How to install and use the App
-1. Make sure that you are connected with the Internet because the App accessed the AI model via API.
+1. Make sure that you are connected with the Internet because the App accessed the AI model (deployed in [Heroku](https://www.heroku.com/) cloud platform) via API.
 2. Download and install the available [APK](https://github.com/jeraldconstantino/pili-balita/blob/main/Pili-Balita.apk). 
 3. Search for any Tagalog articles found in the social media and copy the content. 
 4. Open the App and paste the content.
