@@ -40,8 +40,9 @@ $ path\to\venv\Scripts\Activate.ps1      # This will activate your environment.
 ```
 $ pip install -r requirements.txt
 ```
-4. [set up for URL request is not yet available]
-5. Run the App.
+4. Set up your [Heroku](https://www.heroku.com/) account, deploy the AI model there, and copy the generated URL. You may refer from [pili-balita-fast-API](https://github.com/jeraldconstantino/pili-balita-fast-API) repository to have a elaborated used of Heroku. 
+5. Paste the URL link within the [url.py](https://github.com/jeraldconstantino/pili-balita/blob/main/url.py) file.
+6. Run the App.
 
 > **NOTE:** variables and other parameters are written in Filipino language because the App is designed as part of our research during the Filipino course. Sooner, if I have a free time, I will translate it in English.
 
