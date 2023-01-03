@@ -18,7 +18,7 @@
 
 > **NOTE:** Limitation exists such as data availability. The AI model may predict an accurate result if you have provided an article that is published on 2021 and below. As of now (January, 2023), the dataset is not yet cleaned and updated with the latest news report by the developer. Training and validating the AI model is highly needed.
 
-If the result is not displaying even if you have a good Internet connection, the possible problem may exists in the Heroku side as I only used a free accessed with that cloud platform. By following the instructions below, you can replicate the App and deploy the AI model in Heroku (or any cloud platform service) to make it working.
+If the result is not displaying even if you have a good Internet connection, the possible problem may exists in the Heroku side as I only used a free accessed account with that cloud platform. By following the instructions below, you can replicate the App and deploy the AI model in Heroku (or any cloud platform service) to make it working.
 
 ## Usage
 To use this project, make sure that you have [Git](https://git-scm.com/) and [Python](https://www.python.org/downloads/) (which includes PIP) installed in your machine. 
