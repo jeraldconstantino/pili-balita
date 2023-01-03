@@ -41,7 +41,7 @@ $ pip install -r requirements.txt
 6. [set up for URL request]
 7. Run the App.
 
-> **NOTE:** variables and other parameters are written in Filipino language because the App is designed as part of our Research in Filipino course. Sooner, if I have a free time, I will translate it in English.
+> **NOTE:** variables and other parameters are written in Filipino language because the App is designed as part of our research during the Filipino course. Sooner, if I have a free time, I will translate it in English.
 
 ## Open for Contribution
 1. Clone repository and create a new branch: 
