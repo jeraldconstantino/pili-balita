@@ -1,4 +1,5 @@
 import certifi as cfi
+from url import get_url 
 import urllib, webbrowser
 from kivymd.app import MDApp
 from kivymd.toast import toast
@@ -188,7 +189,7 @@ class Katawan(BoxLayout):
 
     def iproseso_ang_datos(self):
         balita = urllib.parse.quote(self.ids.balita.text, safe='')
-        URLRequest = f"https://pilibalita-api.herokuapp.com/hula?balita={balita}"
+        URLRequest = get_url(balita)
         UrlRequest(
             url=URLRequest,
             on_success=self.iulat_ang_resulta,
