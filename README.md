@@ -5,7 +5,7 @@
 <h4 align="center"> Machine learning-based Android application that can classifies Philippine fake news spread throughout the social media. </h4>
 
 ## Features
-- Detects Philippine fake news or article spread in social media.
+- Detects Philippine fake news or articles spread in social media.
 - Display the accuracy output of the three different algorithms used in the App.
 
 ## How to install and use the App
