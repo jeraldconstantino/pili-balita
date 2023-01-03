@@ -38,8 +38,8 @@ $ path\to\venv\Scripts\Activate.ps1      # This will activate your environment.
 ```
 $ pip install -r requirements.txt
 ```
-6. [set up for URL request]
-7. Run the App.
+4. [set up for URL request is not yet available]
+5. Run the App.
 
 > **NOTE:** variables and other parameters are written in Filipino language because the App is designed as part of our research during the Filipino course. Sooner, if I have a free time, I will translate it in English.
 
