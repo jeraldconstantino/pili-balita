@@ -13,7 +13,7 @@
 2. Download and install the available [APK](https://github.com/jeraldconstantino/pili-balita/blob/main/Pili-Balita.apk). 
 3. Search for any Tagalog articles found in the social media and copy the content. 
 4. Open the App and paste the content.
-5. Click the "Tuklasin" button.
+5. Click the "TUKLASIN!" button.
 6. Wait for a second until the result is displayed. 
 
 > **NOTE:** Limitation exists such as data availability. The AI model may predict an accurate result if you have provided an article that is published on 2021 and below. As of now (January, 2023), the dataset is not yet cleaned and updated with the latest news report by the developer. Training and validating the AI model is highly needed.
