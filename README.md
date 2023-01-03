@@ -40,7 +40,7 @@ $ path\to\venv\Scripts\Activate.ps1      # This will activate your environment.
 ```
 $ pip install -r requirements.txt
 ```
-4. Set up your [Heroku](https://www.heroku.com/) account, deploy the AI model there, and copy the generated URL. You may refer from [pili-balita-fast-API](https://github.com/jeraldconstantino/pili-balita-fast-API) repository to have a elaborated used of Heroku. 
+4. Set up your [Heroku](https://www.heroku.com/) account, deploy the AI model there, and copy the generated URL. You may refer from [pili-balita-fast-API](https://github.com/jeraldconstantino/pili-balita-fast-API) repository to have an elaborated usage of Heroku platform. 
 5. Paste the URL link within the [url.py](https://github.com/jeraldconstantino/pili-balita/blob/main/url.py) file.
 6. Run the App.
 
